@@ -5,7 +5,8 @@ const mqtt = require('mqtt');
 const caFile = fs.readFileSync('./AWS_Things_key/rootCA.pem');
 const certFile = fs.readFileSync('./AWS_Things_key/certificate.pem.crt');
 const keyFile = fs.readFileSync('./AWS_Things_key/private.pem.key');
-const deviceId = 'YOUR_DEVICE_ID_HERE';
+const deviceId = 'arn:aws:iot:ap-northeast-2:013183450059:thing/RaspberryPi4';
+const topic = 'raspbi/test';
 
 // MQTT options including the SSL configuration
 const options = {
