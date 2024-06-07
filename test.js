@@ -5,16 +5,17 @@ const mqtt = require('mqtt');
 const caFile = fs.readFileSync('keys/rootCA.pem');
 const certFile = fs.readFileSync('keys/certificate.pem.crt');
 const keyFile = fs.readFileSync('keys/private.pem.key');
+const clientId = 'iotconsole-123e73f6-ffb1-4e43-9471-6352fe46145d';
 
 // MQTT options including the SSL configuration
 const options = {
-  host: 'a3mwllq937a5i6-ats.iot.ap-northeast-2.amazonaws.com',
+  endpoint: 'a3mwllq937a5i6-ats.iot.ap-northeast-2.amazonaws.com',
   port: 8883,
   protocol: 'mqtts',
-  ca: caFile,
+  ca_file: caFile,
   cert: certFile,
   key: keyFile,
-  rejectUnauthorized: false
+  client_id: clientId
 };
 
 // Connect to the AWS IoT
